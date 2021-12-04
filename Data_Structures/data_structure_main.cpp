@@ -1,13 +1,22 @@
 
 #include <iostream>
 #include <string>
+
+#include "linearDataStructure.h"
+
 using namespace std;
 
+void RunLinearDataStructure(LinearDataStructure linearDataStructure) {
+	cout << "Running Arrays Method:" << "\n";
+	linearDataStructure.runArrays();
+
+
+}
+
 int main() {
-	string i;
-	cout << "Hello World" << "\n";
-	cout << "Type in your response: ";
-	getline(cin, i);
-	cout << "You've typed " << i << "\n";
+	LinearDataStructure linearDataStructure;
+	
+	RunLinearDataStructure(linearDataStructure);
+
 	return 0;
 }
