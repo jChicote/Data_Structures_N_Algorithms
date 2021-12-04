@@ -1,3 +1,7 @@
+/**
+* Basic implementation involving the articulation and usage of arrays.
+*/
+
 #include <iostream>
 #include "linearDataStructure.h"
 using namespace std;
