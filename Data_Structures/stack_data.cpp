@@ -1,7 +1,7 @@
 
 /*
 * Author: Jaiden Chicote
-* Created on December 3, 2021
+* Created on December 6, 2021
 * 
 * Script contains basic functionality and tests of usage of a stack data structure.
 * 
