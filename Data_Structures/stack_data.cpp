@@ -60,7 +60,7 @@ public:
 		}
 
 		top++;
-		size++;
+		currentSize++;
 		items[top] = element;
 	}
 
@@ -74,7 +74,7 @@ public:
 		}
 
 		top--;
-		size--;
+		currentSize--;
 	}
 
 	/*
@@ -84,18 +84,75 @@ public:
 	int peek() {
 		if (isEmpty()) {
 			cout << "\n Stack is Empty \n";
-			return;
+			return 0;
 		}
 
 		return items[top];
 	}
+
+	void displayArray() {
+		for (int i = 0; i <= top; i++) {
+			cout << items[i];
+		}
+	}
 };
 
-void stackTest() {
+/*
+* Performs simple loop that takes in user (awsd) movements and stores a log of the first 10 
+* movements of the controlled hypothetical character. The character can move in any directions
+* but can backtrack movement history.
+*/
+void characterMovementTest() {
+	stack characterMovement;
+	bool continueMovement = true;
 
+	string key;
+
+	while (continueMovement) {
+		// Validy checks for next movement
+		if (characterMovement.isFull()) {
+			continueMovement = false;
+		}
+
+		// decide movement
+		cout << "\n What is your next direction (awsd) (b = walk back): ";
+		cin >> key;
+
+		if (key == "a") {
+			characterMovement.push(1);
+			cout << "\n You have moved left";
+		}
+		else if (key == "w") {
+			characterMovement.push(2);
+			cout << "\n You have moved up";
+		}
+		else if (key == "s") {
+			characterMovement.push(3);
+			cout << "\n You have moved down";
+		}
+		else if (key == "d") {
+			characterMovement.push(4);
+			cout << "\n You have moved right";
+		}
+		else if (key == "b") {
+			characterMovement.pop();
+			cout << "\n You have moved back a step";
+		}
+		else {
+			cout << "/n Input invalid";
+		}
+
+		cout << "\n Want to continue movement? (1 = Yes, 0 = No): ";
+		cin >> continueMovement;
+		cout << "\n";
+	}
+
+	characterMovement.displayArray();
 }
 
 
 int main() {
 
+	// perform character movement test
+	characterMovementTest();
 }
